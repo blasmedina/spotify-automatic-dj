@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Example of the Authorization Code flow with Spotify</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/styles.css" />
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div id="countdown" class="text-center">
+                <div class="row justify-content-md-center">
+                    <div class="col col-lg-3"><span class="hours">00</span></div>
+                    <div class="col col-lg-1">:</div>
+                    <div class="col col-lg-3"><span class="minutes">00</span></div>
+                    <div class="col col-lg-1">:</div>
+                    <div class="col col-lg-3"><span class="seconds">00</span></div>
+                </div>
+            </div>
+            <h1 id="alert-saludo" class="text-center"><strong>FELIZ<br />AÑO NUEVO</strong></h1>
+            <div id="alert-radio" class="alert alert-info" role="alert">
+                <h1 class="display-1 text-center">
+                    <strong>¡¡3, 2, 1... A BAILAR!!</strong><br />
+                </h1>
+                <h1 class="display-3 text-center">
+                    Pongan la RADIO en AUX, con el boton "FUNCTION"
+                </h1>
+            </div>
+            <div id="login">
+                <h1>App BlasMedina 2020</h1>
+                <a href="/login" class="btn btn-primary">Log in with Spotify</a>
+            </div>
+            <div id="loggedin">
+                <div id="user-profile"></div>
+                <div id="oauth"></div>
+                <button class="btn btn-default" id="obtain-new-token">Obtain new token using the refresh token</button>
+            </div>
+        </div>
+        <script id="user-profile-template" type="text/x-handlebars-template">
+            <h1>Logged in as {{display_name}}</h1>
+            <div class="media">
+                <div class="pull-left">
+                    <img class="media-object" width="150" src="{{images.0.url}}" />
+                </div>
+                <div class="media-body">
+                    <dl class="dl-horizontal">
+                        <dt>Display name</dt><dd class="clearfix">{{display_name}}</dd>
+                        <dt>Id</dt><dd>{{id}}</dd>
+                        <dt>Email</dt><dd>{{email}}</dd>
+                        <dt>Spotify URI</dt><dd><a href="{{external_urls.spotify}}">{{external_urls.spotify}}</a></dd>
+                        <dt>Link</dt><dd><a href="{{href}}">{{href}}</a></dd>
+                        <dt>Profile Image</dt><dd class="clearfix"><a href="{{images.0.url}}">{{images.0.url}}</a></dd>
+                        <dt>Country</dt><dd>{{country}}</dd>
+                    </dl>
+                </div>
+                <a class="btn btn-danger" href="https://accounts.spotify.com/en/logout">Logout</a>
+            </div>
+        </script>
+        <script id="oauth-template" type="text/x-handlebars-template">
+            <h2>oAuth info</h2>
+            <dl class="dl-horizontal">
+                <dt>Access token</dt><dd class="text-overflow">{{access_token}}</dd>
+                <dt>Refresh token</dt><dd class="text-overflow">{{refresh_token}}</dd>
+            </dl>
+        </script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
+        <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> -->
+        <script src="/js/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="/js/main.js"></script>
+    </body>
+</html>

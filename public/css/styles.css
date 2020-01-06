@@ -1,0 +1,48 @@
+body {
+    color: whitesmoke;
+    background-color: black;
+}
+
+#login,
+#loggedin,
+#countdown,
+#alert-saludo,
+#alert-radio {
+    display: none;
+}
+
+#countdown {
+    padding-top: 120px;
+    font-size: 280px;
+}
+
+#countdown span {
+    font-size: 280px;
+    text-align: center;
+}
+
+#alert-saludo {
+    padding-top: 20px;
+    font-size: 200px;
+    color: #f35626;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    background-image: linear-gradient(92deg, #f35626 0%,#feab3a 100%);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: hue .4s infinite linear;
+}
+
+/*-----------------------------------*\
+  $ANIMATIONS
+\*-----------------------------------*/
+
+@keyframes hue {
+    from {
+      filter: hue-rotate(0deg);
+    }
+    
+    to {
+      filter: hue-rotate(-360deg);
+    }
+  }
